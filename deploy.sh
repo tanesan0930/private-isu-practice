@@ -6,10 +6,10 @@ now=$(date +%Y%m%d-%H%M%S)
 
 for h in 1
 do
-   rsync -av  --exclude '.git' ./ isucon${h}:/home/isucon/private_isu/webapp/
+   rsync -lOrtcv  --exclude '.git' ./ isucon${h}:/home/isucon/private_isu/webapp/
    ssh isucon${h} sudo systemctl restart isu-go.service
    ssh isucon${h} sudo cp /home/isucon/private_isu/webapp/nginx${h}.conf /etc/nginx/nginx.conf
-   ssh isucon${h} sudo cp /home/isucon/private_isu/webapp/mysqld${h}.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+   ssh isucon${h} sudo cp /home/isucon/private_isu/webapp/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 done
 
 # nginx ログのローテーション

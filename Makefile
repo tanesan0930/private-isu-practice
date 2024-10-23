@@ -16,17 +16,17 @@ analyze:
 pprof:
 	go tool pprof -http=0.0.0.0:1080 ./go http://localhost:6060/debug/pprof/profile
 
-.PHONY: setup
-setup:
-    sudo apt install -y graphviz gv
-    wget https://github.com/tkuchiki/slp/releases/download/v0.2.0/slp_linux_amd64.tar.gz
-    tar -xvf slp_linux_amd64.tar.gz
-    sudo mv slp /usr/local/bin/slp
-    wget https://github.com/tkuchiki/alp/releases/download/v1.0.21/alp_linux_amd64.tar.gz
-    tar -xvf alp_linux_amd64.tar.gz
-    sudo mv alp /usr/local/bin/alp
-    wget https://github.com/kaz/pprotein/releases/download/v1.2.3/pprotein_1.2.3_linux_amd64.tar.gz
-    tar -xvf pprotein_1.2.3_linux_amd64.tar.gz
+# .PHONY: setup
+# setup:
+#     sudo apt install -y graphviz gv
+#     wget https://github.com/tkuchiki/slp/releases/download/v0.2.0/slp_linux_amd64.tar.gz
+#     tar -xvf slp_linux_amd64.tar.gz
+#     sudo mv slp /usr/local/bin/slp
+#     wget https://github.com/tkuchiki/alp/releases/download/v1.0.21/alp_linux_amd64.tar.gz
+#     tar -xvf alp_linux_amd64.tar.gz
+#     sudo mv alp /usr/local/bin/alp
+#     wget https://github.com/kaz/pprotein/releases/download/v1.2.3/pprotein_1.2.3_linux_amd64.tar.gz
+#     tar -xvf pprotein_1.2.3_linux_amd64.tar.gz
 
 .PHONY: conf
 conf:
